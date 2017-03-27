@@ -13,14 +13,14 @@ import java.io.UnsupportedEncodingException;
 public class ConversionOfTypes {
 
     /**
-     * Правила преобразований при операциях конверсии типов: - если один из
-     * операндов операции относится к типу double, то и второй операнд
-     * преобразуется к типу double - если предыдущее условие не соблюдено, а
-     * один из операндов операции относится к типу float, то и второй операнд
-     * преобразуется к типу float - если предыдущие условия не соблюдены, а один
-     * из операндов операции относится к типу long, то и второй операнд
-     * преобразуется к типу long - иначе все операнды операции преобразуются к
-     * типу int
+     * Правила преобразований при операциях конверсии типов:
+     *      - если один из операндов операции относится к типу double, то и второй операнд
+     * преобразуется к типу double.
+     *      - если предыдущее условие не соблюдено, а один из операндов операции относится к типу
+     * float, то и второй операнд преобразуется к типу float.
+     *      - если предыдущие условия не соблюдены, а один из операндов операции относится к типу
+     * long, то и второй операнд преобразуется к типу long.
+     *      - иначе все операнды операции преобразуются к типу int.
      */
     public ConversionOfTypes() {
 
@@ -36,21 +36,20 @@ public class ConversionOfTypes {
         byte b2_2 = (byte) +b;   // Unary plus does the same.
 
         byte x = -128;
-        System.out.println(-x); // 128, but not because unary "-" makes a value to become int.
-        // It is seen in a next row.
+        System.out.println(-x); // 128
         System.out.println(((Object) (-x)).getClass()); // class java.lang.Integer
 
         byte y = 127;
         System.out.println(++y);    // -128. Byte range is [-128...127].
 
         byte z = (x > y) ? x : y; // Correct, x,y have the same type.
-        System.out.println(z);  // -128. Seems comparison is done in int.
+        System.out.println(z);  // -128. Comparison is done in int.
 //        byte abs = (x > 0) ? x : -x; // Wrong. -x is of an int type.
         int abs2 = (x > 0) ? x : -x; // But this one is fine.
 
         long xL = 100;
         long yL = 200;
-        long someL = (xL > yL) ? -xL : -yL;
+        long someL = (xL > yL) ? -xL : -yL;     // -200;
 
         /*
          * b*2 is of an "int" type and it cannot be implicitly cast to byte, 
@@ -66,7 +65,7 @@ public class ConversionOfTypes {
          */
         b = (byte) (b * 2);
         //* As seen next, b * 2 is of an "int" type:
-        System.out.println(((Object) (b * 2)).getClass());
+        System.out.println(((Object) (b * 2)).getClass()); // class java.lang.Integer
         /*
          * Programmer has to be aware that "b * 2" might overflow and the
          * resulting value won't fit into b.
@@ -98,7 +97,7 @@ public class ConversionOfTypes {
         long res = x2 * y2;  // Same problem. * still makes integer value, no
         // matter if it is too large for it.
         System.out.println(res);
-        res = (long)(x2 * y2);  // Still problem remains.
+        res = (long) (x2 * y2);  // Still problem remains.
         System.out.println(res);
         res = ((long) x2) * y2;  // This is the way out.
         /*
@@ -110,7 +109,7 @@ public class ConversionOfTypes {
         // "Integer number too large"
 //        System.out.println(((Object) (s * 2000000000000000000000L)).getClass());
 
-        // Default type for number that is not fractional is integer. It is seen below.
+        // Default type for number that is integral(целое) is integer. It is seen below.
         System.out.println(((Object) 5).getClass());    // class java.lang.Integer
         System.out.println(((Object) 5F).getClass());   // class java.lang.Float
         System.out.println(((Object) 5D).getClass());   // class java.lang.Double
@@ -146,7 +145,7 @@ public class ConversionOfTypes {
         float f2 = a;   // Strange that such an implicit casting is allowed.
         System.out.printf("%10.0f\n", f2);  // 1234567939550609410
         a = (long) f2;  // Here we see that we lost the initial long value.
-        System.out.println(a);  // 1234567939550609408
+        System.out.println(a) ;  // 1234567939550609408
 
         float f3_ = 2e9f;   // It is 2.0E9
         System.out.println((int) (char) f3_);   //37888
@@ -205,7 +204,7 @@ public class ConversionOfTypes {
 //        // but without it, it is still double.
 //
         System.out.println(30.1f + 1.0f);   // 31.1
-        System.out.println(30.1  + 1.0);    // 31.1
+        System.out.println(30.1 + 1.0);    // 31.1
 
         // When are these expressions false ? -
         //  1) x2*30/30 == x2
@@ -213,9 +212,9 @@ public class ConversionOfTypes {
         //      for 1) - Value greater than Integer.MAX_VALUE / 30
         //      for 2) - Любое целое число не делящееся нацело на 30;
         x2 = 1;
-        System.out.println("x*30/30 == x, when x=" + x2 + " is " + (x2*30/30 == x2));
+        System.out.println("x*30/30 == x, when x=" + x2 + " is " + (x2 * 30 / 30 == x2));
         x2 = 1;
-        System.out.println("x/30*30 == x, when x=" + x2 + " is " + (x2/30*30 == x2));
+        System.out.println("x/30*30 == x, when x=" + x2 + " is " + (x2 / 30 * 30 == x2));
 
         //<editor-fold defaultstate="collapsed" desc="String to primitives">
         // String to byte
