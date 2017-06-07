@@ -8,4 +8,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.+'
+    compile group: 'jep', name: 'jep', version: '2.40'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+
 }

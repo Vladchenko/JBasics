@@ -5,8 +5,8 @@
  */
 package ru.tinyprogs;
 
-import com.singularsys.jep.EvaluationException;
-import com.singularsys.jep.Jep;
+//import com.singularsys.jep.EvaluationException;
+//import com.singularsys.jep.Jep;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -1230,35 +1230,35 @@ class HorseTurn {
  *
  * @author Влад
  */
-class SolveExpression {
+//class SolveExpression {
 
-    Jep jep;
-
-    public SolveExpression() {
-        jep = new Jep();
-        System.out.println(solveExpression());
-    }
-
-    /**
-     * This class uses a separate library. Link is below. *
-     * http://www.singularsys.com/jep/download-trial.php
-     */
-    Object solveExpression() {
-        Object result;
-        try {
-            jep.parse("4+12/4-10.3");
-            try {
-                result = jep.evaluate();
-                return result;
-            } catch (EvaluationException ex) {
-                System.out.println("Evaluation failed.");
-            }
-        } catch (com.singularsys.jep.ParseException ex) {
-            System.out.println("Parsing failed.");
-        }
-        return null;
-    }
-}
+//    Jep jep;
+//
+//    public SolveExpression() {
+//        jep = new Jep();
+//        System.out.println(solveExpression());
+//    }
+//
+//    /**
+//     * This class uses a separate library. Link is below. *
+//     * http://www.singularsys.com/jep/download-trial.php
+//     */
+//    Object solveExpression() {
+//        Object result;
+//        try {
+//            jep.parse("4+12/4-10.3");
+//            try {
+//                result = jep.evaluate();
+//                return result;
+//            } catch (EvaluationException ex) {
+//                System.out.println("Evaluation failed.");
+//            }
+//        } catch (com.singularsys.jep.ParseException ex) {
+//            System.out.println("Parsing failed.");
+//        }
+//        return null;
+//    }
+//}
 
 class replaceBadWords {
 
