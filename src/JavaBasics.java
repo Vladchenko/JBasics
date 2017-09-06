@@ -3,9 +3,15 @@
  * and open the template in the editor.
  */
 
+import ru.jbasics.PrimitivesAndWrappers;
+import ru.jbasics.Reflection;
+import ru.jbasics.Threads;
+import ru.jbasics.java.util.Collections_;
 import ru.tinyprogs.JSONManager;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.LogManager;
 
 public class JavaBasics {
 
@@ -35,7 +41,6 @@ public class JavaBasics {
          */
         
 //        try {
-//            // FIXME Throws NPE
 //            LogManager.getLogManager().readConfiguration(
 //                    JavaBasics.class.getResourceAsStream("/logging.properties"));
 //        } catch (IOException e) {
@@ -80,13 +85,11 @@ public class JavaBasics {
 //        file.setOutToFile();
 //        new Invocation().checkInvocation();
 //        new Invocation();
-
-        try {
-            new JSONManager().printJSON("user/files/jsonTestFile.json");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
+//        try {
+//            new JSONManager().printJSON("user/files/jsonTestFile.json");
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 //        Labels.doIt("qwertuiop");
 //        new LuckyTickets();
 //        new Loops().run();        
@@ -106,7 +109,7 @@ public class JavaBasics {
 //        new Parent();
 //        new Polymorphism();
 //        new PrimitivesAndWrappers().checkFloatNan();
-//        new PrimitivesAndWrappers().commonDemo();
+        new PrimitivesAndWrappers().commonDemo();
 //        new PrimitivesAndWrappers().characterWrapperClass();
 //        new PrimitivesAndWrappers().integerWrapperClass();
 //        new Props().run();        

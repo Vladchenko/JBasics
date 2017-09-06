@@ -16,9 +16,9 @@ public class PrimitivesAndWrappers {
     //** http://habrahabr.ru/post/261315/
     byte b = 0b1000111;     // Binary value (starts with "0b")
     byte b2 = 0b0100_0111;  // With a delimeter
-    //    byte b3 = 0b1000_0111;  // Value is bigger than byte, so it's an error
+//    byte b3 = 0b1000_0111;  // Value is bigger than byte, so it's an error
 //    byte b2 = 100b;         // There is no such postfix like 'b' in java
-    // Byte's values range is -128...127, so next row shows error
+    // Byte's values range is -128...127, so next row shows error, since
 //    byte bb = 100 + 100;
     byte b4 = 065;      // OCTAL value 
     //    byte b5 = 0265;     // Value is bigger than byte, so it's error
@@ -44,7 +44,7 @@ public class PrimitivesAndWrappers {
      */
 //    float f2 = 35.0;  // double to float. Not allowed.
     /**
-     * Here 35.0 has "f" sign that says that it is of a float type.
+     * Here 35.0 has "f" sign that says it is of a float type.
      */
     float f3 = 35.0f;
     float f3_1 = (float) 35.0;   // Extra way of conversion.
@@ -60,17 +60,15 @@ public class PrimitivesAndWrappers {
     {
         number = 10;
     }
-
     private int number = 20;
-
     {
-        number = 30;
+        number = 30;    // This one works out.
     }
 
     //** One can put a primitive value into a wrapper class
     Long a = 5L,
             a2 = 5l;    // Do not use small l as a long identifier,
-    // that is a bad programming practice.
+    // since it is a bad programming practice.
 //    Integer i5 = 10f;   // Incompatible types - integer and float.
 //    Float f2 = 10;      // Incompatible types - float and integer.
     Float f3_ = 12f;     // This one works fine.
@@ -185,7 +183,7 @@ public class PrimitivesAndWrappers {
     public void commonDemo() {
 
         int big = 1234567890;
-        float approx = big;     // int can be put to float with no casting.
+        float approx = big;     // int can be put to float with no explicit casting.
 
         System.out.println(big);        // 1234567890
         System.out.println(approx);     // 1.23456794E9
@@ -350,6 +348,9 @@ public class PrimitivesAndWrappers {
                     System.out.print("def ");
             }
         }
+
+        System.out.println();
+        System.out.println(Integer.MAX_VALUE + 1 == Integer.MIN_VALUE); // true
 
     }
 
