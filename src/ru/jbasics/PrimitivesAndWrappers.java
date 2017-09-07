@@ -247,7 +247,7 @@ public class PrimitivesAndWrappers {
         int bb = 4;
         System.out.println("-7 % 4 = " + (-aa % bb));   // -3
         System.out.println("7 % -4 = " + (aa % -bb));   // 3
-        System.out.println("-7 % 4 == 7 % -4 - is " + ((-aa % bb) == (aa % -bb)));
+        System.out.println("-7 % 4 == 7 % -4 - is " + ((-aa % bb) == (aa % -bb)));  // false
 
         i = -+(10 + 2 + i);   //No error
 //        ++i--;                //Error
@@ -274,8 +274,8 @@ public class PrimitivesAndWrappers {
 
         Double d1 = 1d;
         Double d2 = 1d;
-        // Next is FALSE, because == compares memory addresses, but not a values
-        // False, because wrappers are always stored in a heap, due to being objects.
+        // Next is FALSE, because == compares memory addresses, but not a values.
+        // False, because wrappers are objects and they always stored in a heap.
         System.out.println("d1 == d2 - " + (d1 == d2)); // false
 
         Float f1 = 1f;
@@ -288,18 +288,20 @@ public class PrimitivesAndWrappers {
         Integer i2 = 100;
         // This is true. All the values from -128 to 127 are cached for all the integral number wrappers.
         System.out.println("i1 == i2 - " + (i1 == i2)); // true
+        System.out.println("i1 == 100 - " + (i1 == 100)); // true
         // Because http://stackoverflow.com/questions/1700081/why-does-128-128-return-false-but-127-127-return-true-when-converting-to-integ
         Integer i3 = new Integer(100);
         System.out.println("i1 == i3 - " + (i1 == i3)); // false
         Integer i4 = new Integer(100);
         System.out.println("i3 == i4 - " + (i3 == i4)); // false
+        System.out.println("i3 == 100 - " + (i3 == 100)); // true
 
         // Next is TRUE, because EQUALS compares values
-        System.out.println("d1.equals(d2) - " + d1.equals(d2));
+        System.out.println("d1.equals(d2) - " + d1.equals(d2)); // true
 
         // Signed shift. Shifts a value, keeping the sign.
         System.out.println("128 >> 1" + Integer.toString(128 >> 1));    //164
-        // Unsigned shift
+        // Unsigned shift. Shifts a value, not keeping the sign.
         System.out.println("128 >>> 1" + Integer.toString(128 >>> 1));  //164
         // One cannot shift a byte/short but can shift int or long. Shifting,
         // say a byte will make it int first and then makes a shifting.
@@ -351,6 +353,7 @@ public class PrimitivesAndWrappers {
 
         System.out.println();
         System.out.println(Integer.MAX_VALUE + 1 == Integer.MIN_VALUE); // true
+        // When integer overflows, it gets to 0, i.e. - Integer.MIN_VALUE.
 
     }
 
