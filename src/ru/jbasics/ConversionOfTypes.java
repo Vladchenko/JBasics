@@ -43,7 +43,7 @@ public class ConversionOfTypes {
         System.out.println(++y);    // -128. Byte range is [-128...127].
 
         byte z = (x > y) ? x : y; // Correct, x,y have the same type.
-        System.out.println(z);  // -128. Comparison is done in int.
+        System.out.println(z);  // -128. Comparison is done in int and in int -128 is bigger than 127 in binary view.
 //        byte abs = (x > 0) ? x : -x; // Wrong. -x is of an int type.
         int abs2 = (x > 0) ? x : -x; // But this one is fine.
 
@@ -53,8 +53,7 @@ public class ConversionOfTypes {
 
         /*
          * b*2 is of an "int" type and it cannot be implicitly cast to byte, 
-         * thus we get a compilation error "Possible lossy conversion from int 
-         * to byte" in a next row.
+         * thus we get a compilation error.
          */
 //        b = b * 2;
         // This row also gives such error, 'cause *2 eventually gives int type
@@ -73,8 +72,7 @@ public class ConversionOfTypes {
          */
         /*
          * "s * 2" is of an int type and int cannot be implicitly cast to short,
-         * thus we get a compilation error "Possible lossy conversion from int 
-         * to short".
+         * thus we get a compilation error.
          */
 //        s = s * 2;
         // As seen next, "s * 2" is of an "int" type:
