@@ -76,7 +76,7 @@ public class Classes {
          * symantically correct.
          */
 //        System.out.println(Classes.m);
-//        addressAssignCheck();
+        addressAssignCheck();
 //        objectInfo(new Object());
 //        objectInfo( (new Reflections()).dynamicObjectCreation() );
 //        dotClass();
@@ -240,41 +240,41 @@ public class Classes {
         Data b = new Data(2); // b.data is 2
 
         System.out.print("a.toString() = " + a.toString());
-        System.out.println("   a.data = " + a.data);
+        System.out.println("   a.data = " + a.data);    // 1
         System.out.print("b.toString() = " + b.toString());
-        System.out.println("   b.data = " + b.data);
+        System.out.println("   b.data = " + b.data);    // 2
         System.out.println("");
 
         b = a; // b.data and a.data are 1
         System.out.println("b = a");
         System.out.print("a.toString() = " + a.toString());
-        System.out.println("   a.data = " + a.data);
+        System.out.println("   a.data = " + a.data);    // 1
         System.out.print("b.toString() = " + b.toString());
-        System.out.println("   b.data = " + b.data);
+        System.out.println("   b.data = " + b.data);    // 1
         System.out.println("");
 
         a.data = 3; // b.data and a.data are 3
         System.out.println("a.data = 3");
         System.out.print("a.toString() = " + a.toString());
-        System.out.println("  a.data = " + a.data);
+        System.out.println("  a.data = " + a.data);    // 3
         System.out.print("b.toString() = " + b.toString());
-        System.out.println("  b.data = " + b.data);
+        System.out.println("  b.data = " + b.data);    // 3
         System.out.println("");
 
         a = new Data(4);
         System.out.println("a = new Data(4)");
         System.out.print("a.toString() = " + a.toString());
-        System.out.println("   a.data = " + a.data);
+        System.out.println("   a.data = " + a.data);    // 4
         System.out.print("b.toString() = " + b.toString());
-        System.out.println("   b.data = " + b.data);
+        System.out.println("   b.data = " + b.data);    // 3
         System.out.println("");
 
         b = new Data(5);
         System.out.println("b = new Data(5)");
         System.out.print("a.toString() = " + a.toString());
-        System.out.println("   a.data = " + a.data);
+        System.out.println("   a.data = " + a.data);    // 4
         System.out.print("b.toString() = " + b.toString());
-        System.out.println("   b.data = " + b.data);
+        System.out.println("   b.data = " + b.data);    // 5
         System.out.println("");
     }
 
