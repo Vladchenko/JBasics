@@ -168,19 +168,19 @@ public class ConversionOfTypes {
         System.out.println((Float.valueOf(vаluе) + 1.0) == 30.1);   // false
 
         /*
-         * Let's check what's happening there Following row shows class
-         * "java.lang.Float", that is intuitively correct
+         * Let's check what's happening there.
+         * Following row displays class "java.lang.Float", that is intuitively correct
          */
-        System.out.println((Float.valueOf(vаluе)).getClass());
+        System.out.println((Float.valueOf(vаluе)).getClass()); // java.lang.Float
 
         /*
-         * While adding a "1.0" value, that is of a "Double" class, to a
-         * previous expression, that is of a "Float" class, we finally get a
+         * While adding a "1.0" value, which is of a "Double" class, to a
+         * previous expression, which is in turn, of a "Float" class, we finally get a
          * "Double" class.
          */
-        System.out.println(((Object) (Float.valueOf(vаluе) + 1.0)).getClass());
+        System.out.println(((Object) (Float.valueOf(vаluе) + 1.0)).getClass()); // java.lang.Double
 
-        //** Next row, also gives "Double" and that is obvious.
+        //** Next row, also displays "Double" and that is obvious.
         System.out.println(((Object) (30.1)).getClass());
 
         /**
@@ -194,13 +194,14 @@ public class ConversionOfTypes {
                 (Float.valueOf(vаluе) + 1.0));  // 30.100000381469727
         System.out.println((Object) (30.1));    // 30.1
 
+        // Eventually
         System.out.println((Float.valueOf(vаluе) + 1.0) == 30.1);   // false
         System.out.println((Double.valueOf(vаluе) + 1.0) == 30.1);  // true
 
 //        System.out.println(30.1f);
 //        System.out.println(30.1);   // One might add "d" letter after 1, to make it look double,
 //        // but without it, it is still double.
-//
+
         System.out.println(30.1f + 1.0f);   // 31.1
         System.out.println(30.1 + 1.0);    // 31.1
 
@@ -494,13 +495,8 @@ public class ConversionOfTypes {
         System.out.println(i12);
 
         // double to int
-        double d2 = 3.14;
+        double d2 = 3.14;   // Fraction part is discarded.
         int i13 = (int) d2;
-        System.out.println(i13);
-        /**
-         * обратите внимание на то, что после преобразования double в int
-         * отбрасывается дробная часть и остается только целое число. Так, в
-         * нашем примере, на консоль будет выведено число 3.
-         */
+        System.out.println(i13);    // 3
     }
 }
