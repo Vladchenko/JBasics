@@ -73,6 +73,11 @@ public class PrimitivesAndWrappers {
 //    Float f2 = 10;      // Incompatible types - float and integer.
     Float f3_ = 12f;     // This one works fine.
     float f4_ = 12;     // This one works fine.
+    final long Byte = 0;    // One can name a field as Byte. Byte is a wrapper class,
+                            // but it doesn't bother you to name it this way.
+                            // The main reason wy you can is that it is not a keyword in java.
+    final long String = 0;  // The same goes for String and other wrapper.
+//    final long Integer = 0; // Same here.
 
     public void integerWrapperClass() {
 
