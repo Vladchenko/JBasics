@@ -109,7 +109,8 @@ public class JavaBasics {
 //        new Parent();
 //        new Polymorphism();
 //        new PrimitivesAndWrappers().checkFloatNan();
-        new PrimitivesAndWrappers().commonDemo();
+          new PrimitivesAndWrappers().commonDemo();
+//        new PrimitivesAndWrappers().integerWrapperClass();
 //        new PrimitivesAndWrappers().characterWrapperClass();
 //        new PrimitivesAndWrappers().integerWrapperClass();
 //        new Props().run();        

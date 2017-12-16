@@ -21,6 +21,8 @@ public class IO {
 
     public class Files_ {
 
+        Logger logger = Logger.getLogger(this.getClass().getName());
+
         //            http://docs.oracle.com/javase/tutorial/essential/io
         String strSourceFile = "user/files/fileSource.txt";
         String strDestFile = "user/files/fileDestination.txt";
@@ -665,6 +667,26 @@ public class IO {
             }
         }
 
+        private boolean createFile(File newFile) {
+            return false;
+        }
+
+        public boolean createDirectory(File directory) {
+            if (directory.isFile()) {
+                logger.warning("This is a file, so directory already exists");
+                return false;
+            }
+            if (directory.isDirectory()) {
+                logger.info("This directory already exists");
+                return false;
+            }
+            return directory.mkdir();
+        }
+
+        public boolean createDirectory(String directory) {
+            return createDirectory(new File(directory));
+        }
+
     }
 
     public class Keyboard {
@@ -797,7 +819,7 @@ public class IO {
 
     public IO() {
 //        IO.Files_ iof = new Files_();
-        IO.Keyboard iok = new Keyboard();
+//        IO.Keyboard iok = new Keyboard();
     }
 
 }

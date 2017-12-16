@@ -18,7 +18,6 @@ public class Temp {
     }
 
     public Temp() {
-
     }
 
 //    Inner inner = new Inner();
@@ -44,5 +43,6 @@ public class Temp {
 //    Inner inner_7 = temp.new Inner();
 //    //    Temp.Inner inner_8 = temp.new Temp.Inner();
 //    Temp.Inner inner_8 = temp.new Inner();
+
 }
 

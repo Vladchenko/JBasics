@@ -49,7 +49,12 @@ public class Generics {
      * a generic. So this list accepts an instances of a type Double.
      */
     List<Double> lst2 = new ArrayList<>();
-//    
+    /**
+     * Such declaration is also allowed. It is the same as
+     * List<Object> lst2_ = new ArrayList<Double>();
+     */
+    List lst2_ = new ArrayList<Double>();
+
     //** Putting an array to a list
     List<String> strList = new ArrayList<>(Arrays.asList(strArray));
     List<Double> doubleList = new ArrayList<>(Arrays.asList(doubleArray));
@@ -69,6 +74,13 @@ public class Generics {
     public Generics() {
         printCollection(strList);
         printCollection(doubleList);
+    }
+
+    private class Generic<T extends Number> {
+        /**
+         * One cannot make it this way, since T is undefined and array is of an int type.
+         */
+//        private T arr[] = {1,2,3,4,5};
     }
 
     //** Generic class

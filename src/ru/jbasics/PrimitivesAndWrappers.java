@@ -81,6 +81,8 @@ public class PrimitivesAndWrappers {
 
     public void integerWrapperClass() {
 
+        int ii = new Integer(5);    // This is ok
+
         String str1 = "10";
         String str2 = "10";
 
@@ -263,6 +265,8 @@ public class PrimitivesAndWrappers {
         System.out.println(-1. / 0);     // -INFINITY
         System.out.println(1 / -0.);     // -INFINITY
         System.out.println(1. / 0.);    // INFINITY
+        System.out.println(0. / 0.);    // NAN
+        System.out.println(0. / 0. + 10);    // NAN
 
         char ch = 66;
         System.out.println("char ch = 66, is " + ch);   // B
@@ -277,6 +281,7 @@ public class PrimitivesAndWrappers {
         System.out.println(new String[4][2]); // [[Ljava.lang.String;@xxxxx
         System.out.println(new boolean[256]); // [Z@xxxxx
 
+//        Double d1_ = 1; // Incompatible types - java.lang.Double and int.
         Double d1 = 1d;
         Double d2 = 1d;
         // Next is FALSE, because == compares memory addresses, but not a values.
