@@ -29,6 +29,11 @@ public class Files_Test {
     }
 
     @Test
+    public void testCreateDirectoryNull() throws Exception {
+        assertFalse(files.createDirectory((String)null));
+    }
+
+    @Test
     public void testCreateDirectoryNumbered() throws Exception {
         String directory = Integer.toString((int)(Math.random() * 1000000));
         assertTrue(testCreateDirectory(directory));

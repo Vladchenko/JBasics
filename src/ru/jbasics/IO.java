@@ -672,19 +672,29 @@ public class IO {
         }
 
         public boolean createDirectory(File directory) {
-            if (directory.isFile()) {
-                logger.warning("This is a file, so directory already exists");
-                return false;
-            }
-            if (directory.isDirectory()) {
-                logger.info("This directory already exists");
+            if (directory != null) {
+                if (directory.isFile()) {
+                    logger.warning("This is a file, so directory already exists");
+                    return false;
+                }
+                if (directory.isDirectory()) {
+                    logger.info("This directory already exists");
+                    return false;
+                }
+            } else {
+                logger.info("You tried to create a null directory !");
                 return false;
             }
             return directory.mkdir();
         }
 
         public boolean createDirectory(String directory) {
-            return createDirectory(new File(directory));
+            if (directory==null) {
+                logger.info("You tried to create a null directory !");
+                return false;
+            }
+            File file = new File(directory);
+            return createDirectory(file);
         }
 
     }
