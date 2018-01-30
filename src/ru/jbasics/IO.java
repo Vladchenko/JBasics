@@ -10,7 +10,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,7 +41,26 @@ public class IO {
 //        fileInputStreamDemo();
 //        fileOutputStreamDemo();
 //            inputStreamReaderDemo();
-            outputStreamWriterDemo();
+//            outputStreamWriterDemo();
+//            readWithScanner(strSourceFile);
+            checkFilePresence();
+        }
+
+        public void checkFilePresence() {
+            File newFile = new File(Integer.toString(new Random().nextInt()));
+            System.out.println(newFile.toString() + " exists:" + newFile.exists());
+            try {
+                if (newFile.createNewFile()) {
+                    System.out.println("File " + newFile + " has been created.");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println(newFile.toString() + " exists:" + newFile.exists());
+            if (newFile.delete()) {
+                System.out.println("File " + newFile + " has been deleted.");
+            }
+            System.out.println(newFile.toString() + " exists:" + newFile.exists());
         }
 
         // BYTE STREAMS
@@ -828,7 +849,7 @@ public class IO {
     }
 
     public IO() {
-//        IO.Files_ iof = new Files_();
+        IO.Files_ iof = new Files_();
 //        IO.Keyboard iok = new Keyboard();
     }
 

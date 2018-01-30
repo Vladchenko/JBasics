@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 
+import ru.jbasics.IO;
 import ru.jbasics.PrimitivesAndWrappers;
 import ru.jbasics.Reflection;
 import ru.jbasics.Threads;
@@ -81,7 +82,7 @@ public class JavaBasics {
 //        new Interfaces();
 //        new Invocation();
 //        IO.Files_ file = (new IO()).new Files_();
-//        new IO();
+        new IO();
 //        file.setOutToFile();
 //        new Invocation().checkInvocation();
 //        new Invocation();
@@ -109,7 +110,7 @@ public class JavaBasics {
 //        new Parent();
 //        new Polymorphism();
 //        new PrimitivesAndWrappers().checkFloatNan();
-          new PrimitivesAndWrappers().commonDemo();
+//          new PrimitivesAndWrappers().commonDemo();
 //        new PrimitivesAndWrappers().integerWrapperClass();
 //        new PrimitivesAndWrappers().characterWrapperClass();
 //        new PrimitivesAndWrappers().integerWrapperClass();
